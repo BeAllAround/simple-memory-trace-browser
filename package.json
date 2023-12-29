@@ -6,7 +6,7 @@
   "scripts": {
     "start-dev": "http-server -o ./web/index.html -c-1",
     "prep-dev": "yarn link simple-memory-trace",
-    "repo-npm-publish": "npm run repo-tag && npm publish",
+    "repo-npm-publish": "npm run build && npm run repo-tag && npm publish",
     "browserify-prod": "browserify -g uglifyify -o simple-memory-trace-browser.js -e simple-memory-trace-browser-src.js -s trace_memory",
     "browserify-test": "browserify -o simple-memory-trace-browser.js -e simple-memory-trace-src.js -s trace_memory",
     "build": "npm run browserify-prod",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "http-server": "^14.1.1",
-    "simple-memory-trace": "^0.1.0",
+    "simple-memory-trace": "^0.1.1",
     "browserify": "^17.0.0",
     "uglifyify": "^5.0.2"
   },
