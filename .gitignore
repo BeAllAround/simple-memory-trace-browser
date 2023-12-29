@@ -130,3 +130,4 @@ dist
 .pnp.*
 *.swp
 *.lock
+*-lock.json
