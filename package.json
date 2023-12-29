@@ -1,0 +1,38 @@
+{
+  "name": "simple-memory-trace",
+  "version": "0.1.0",
+  "description": "Simple way to trace memory of your NodeJS functions",
+  "main": "lib/js/trace_memory.js",
+  "scripts": {
+    "start-dev": "http-server -o ./web/index.html -c-1",
+    "prep-dev": "yarn link simple-memory-trace",
+    "repo-npm-publish": "npm run repo-tag && npm publish",
+    "test": "node --expose-gc ./test/test02.js",
+    "browserify-prod": "browserify -g uglifyify -o simple-memory-trace-browser.js -e simple-memory-trace-browser-src.js -s trace_memory",
+    "browserify-test": "browserify -o simple-memory-trace-browser.js -e simple-memory-trace-src.js -s trace_memory",
+    "build": "npm run browserify-prod",
+    "repo-tag": "REPO_VERSION=`node -e \"console.log(require('./package').version)\"` && echo TAG: v$REPO_VERSION && git commit -a -m v$REPO_VERSION && git push && git tag v$REPO_VERSION && git push --tags;"
+  },
+  "keywords": [
+    "tracer",
+    "memory"
+  ],
+  "author": "Aleksandar Milenkovic",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:BeAllAround/simple-memory-trace.git"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "simple-memory-trace": "^0.1.0",
+    "browserify": "^17.0.0",
+    "uglifyify": "^5.0.2"
+  },
+  "license": "MIT",
+  "files": [
+    "lib",
+    "test",
+    "LICENSE",
+    "README.md"
+  ]
+}
