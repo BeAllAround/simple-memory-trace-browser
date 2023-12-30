@@ -1,36 +1,37 @@
 {
-  "name": "simple-memory-trace-browser",
-  "version": "0.0.1",
-  "description": "Simple way to trace memory of your JS functions",
-  "main": "simple-memory-trace-browser.js",
+  "name": "simple-trace-malloc-browser",
+  "version": "0.0.2",
+  "description": "Simple way to trace allocated memory of your JS functions",
+  "main": "simple-trace-malloc-browser.js",
   "scripts": {
     "start-dev": "http-server -o ./web/index.html -c-1",
-    "prep-dev": "yarn link simple-memory-trace",
+    "prep-dev": "yarn link simple-trace-malloc",
     "repo-npm-publish": "npm run build && npm run repo-tag && npm publish",
-    "browserify-prod": "browserify -g uglifyify -o simple-memory-trace-browser.js -e simple-memory-trace-browser-src.js -s trace_memory",
-    "browserify-test": "browserify -o simple-memory-trace-browser.js -e simple-memory-trace-src.js -s trace_memory",
+    "browserify-prod": "browserify -g uglifyify -o simple-trace-malloc-browser.js -e simple-trace-malloc-browser-src.js -s trace_malloc",
+    "browserify-test": "browserify -o simple-trace-malloc-browser.js -e simple-trace-malloc-src.js -s trace_malloc",
     "build": "npm run browserify-prod",
     "repo-tag": "REPO_VERSION=`node -e \"console.log(require('./package').version)\"` && echo TAG: v$REPO_VERSION && git commit -a -m v$REPO_VERSION && git push && git tag v$REPO_VERSION && git push --tags;"
   },
   "keywords": [
     "tracer",
     "memory",
+    "malloc",
     "browser"
   ],
   "author": "Aleksandar Milenkovic",
   "repository": {
     "type": "git",
-    "url": "git@github.com:BeAllAround/simple-memory-trace-browser.git"
+    "url": "git@github.com:BeAllAround/simple-trace-malloc-browser.git"
   },
   "devDependencies": {
     "http-server": "^14.1.1",
-    "simple-memory-trace": "^0.1.1",
+    "simple-trace-malloc": "^0.1.2",
     "browserify": "^17.0.0",
     "uglifyify": "^5.0.2"
   },
   "license": "MIT",
   "files": [
-    "simple-memory-trace-browser.js",
+    "simple-trace-malloc-browser.js",
     "web",
     "LICENSE",
     "README.md"
