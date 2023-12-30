@@ -43,9 +43,10 @@ function make_array(size) {
   console.log(memoryUsage)
 
 })()
+
 /*
-//import trace_memory from "../simple-memory-trace-browser.js"
-import('../simple-memory-trace-browser.js').then((out) => {
+//import trace_malloc from "../simple-trace-malloc-browser.js"
+import('../simple-trace-malloc-browser.js').then((out) => {
   console.log(out)
 });
 */
