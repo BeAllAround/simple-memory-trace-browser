@@ -8,6 +8,4 @@ async function trace_malloc(func, options, ...args) {
   }, force_gc: 0, ...options }, ...args)
 }
 
-
 window.trace_malloc = module.exports = trace_malloc
-
