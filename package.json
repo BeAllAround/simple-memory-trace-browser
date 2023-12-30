@@ -1,6 +1,6 @@
 {
   "name": "simple-trace-malloc-browser",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple way to trace allocated memory of your JS functions",
   "main": "simple-trace-malloc-browser.js",
   "scripts": {
